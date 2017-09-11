@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	//- Block Log in
+	.tab-content
+		#fill-in
+			#content.border_submit
+				.submit_info
+					h3.heading Đăng nhập
+					.transparent_submit_info
+					form.user_info(method='post')
+						.input_place
+							input#fullname.form-control.input-lg(name='name', type="text", placeholder="Username")
+						.input_place
+							input#pwd.form-control.input-lg(name='password', type="password", placeholder="Password")
+						button#login2_btn.btn.btn-lg.btn-primary(type='submit', onclick='checkAll()') Đăng nhập
+						.directSignin
+							a(href='/signup') Tạo tài khoản.
+						if (error)
+							.alert.alert-warning 
+								h4 #{mess}
+				

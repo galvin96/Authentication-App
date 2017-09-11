@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	//- Block Log in
+	.tab-content
+		#fill-in
+			#content.border_submit
+				.submit_info
+					h3.heading Welcome
+					.transparent_submit_info
+					form.user_info(action='/', method='post')
+						.input_place
+							h2 Chào mừng #{title} vào website.
+						button#login_btn.user_info.btn.btn-lg.btn-primary.btn-block(type='submit') #{typeButton}
