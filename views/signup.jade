@@ -1,0 +1,23 @@
+extends layout
+
+block content
+	//- Block Sign up
+	.tab-content
+		#fill-in
+			#content.border_submit
+				.submit_info
+					h3.heading Đăng ký
+					.transparent_submit_info
+					form.user_info(method='post')
+						.input_place
+							input#fullname.form-control.input-lg(name='name', type="text", placeholder="Username", required='', onchange='confirm_id()')
+						.input_place
+							input#pwd.form-control.input-lg(name='password', type="password", placeholder="Password", required='')
+						.input_place
+							input#pwd2.form-control.input-lg(name='confirmPassword', type="password", placeholder="Confirm Password", required='', onchange='confirm_pwd()')
+						#messCheckPwd #{Alert}
+						button#signup_btn.btn.btn-lg.btn-primary(type='submit') Đăng ký
+						.directSignin
+							a(href='/login') Bạn đã có tài khoản?
+
+						
