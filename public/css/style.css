@@ -5,8 +5,9 @@ a {
 body{
 	font-family: 'Raleway',sans-serif;
 }
-#background-vid{
+#background{
 	position: absolute;
+	background-color: #eeeeee; 
 	bottom: 0;
 	right: 0;
 	min-height: 100%;
