@@ -9,7 +9,7 @@ router.post('/', function(req, res, next){
 	var authenticated = false;
 	req.session.message='';
 	req.session.error= false;
-	mongoose.model('userDb').findOne({ username : loginForm.name}, function(err, user){
+	mongoose.model('userDb').findOne({ username : loginForm.name, password : loginForm.password}, function(err, user){
 		if (user){
 			authenticated= true;
 			req.session.authenticated= true;
@@ -17,7 +17,7 @@ router.post('/', function(req, res, next){
 			res.redirect('/');
 		}
 		else{
-			req.session.message='Username and password are incorrect!';
+			req.session.message='Username or password are incorrect!';
 			req.session.error=true;
 			res.redirect('/login');
 		}
